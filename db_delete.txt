@@ -1,0 +1,1605 @@
+
+Private Sub RefreshFormulae()
+'This procedure refreshes the DATABASE worksheet with the formulae for lookups.
+'Formulae are re-written to replace user entry of values for a new record or an update of fields for an existing record
+
+Dim WkSht As Object
+Set WkSht = ThisWorkbook.Worksheets("DATABASE")
+
+With WkSht
+
+     'Member Personal Details
+    .Range("C7").Formula = "=VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 3, FALSE)"
+    .Range("C8").Formula = "=$C$3"
+    .Range("C9").Formula = "=IF(VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 5, FALSE) = 0, """", VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 5, FALSE))"
+    .Range("C10").Formula = "=VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 7, FALSE)"
+    .Range("C11").Formula = "=IF(VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 9, FALSE) = 0, """", VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 9, FALSE))"
+    .Range("C12").Formula = "=IF(VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 11, FALSE) = 0, """", VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 11, FALSE))"
+    .Range("H7").Formula = "=VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 2, FALSE)"
+    .Range("H8").Formula = "=VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 4, FALSE)"
+    .Range("H9").Formula = "=VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 6, FALSE)"
+    .Range("H10").Formula = "=VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 8, FALSE)"
+    .Range("H11").Formula = "=IF(VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 10, FALSE) = 0, """", VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 10, FALSE))"
+    .Range("H12").Formula = "=IF(VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 12, FALSE) = 0, """", VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 12, FALSE))"
+    
+    'Member Contact Details
+    .Range("C23").Formula = "=IF(VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 13, FALSE) = 0, """", VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 13, FALSE))"
+    .Range("C24").Formula = "=IF(VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 14, FALSE) = 0, """", VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 14, FALSE))"
+    .Range("C25").Formula = "=IF(VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 15, FALSE) = 0, """", VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 15, FALSE))"
+    .Range("C27").Formula = "=IF(VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 16, FALSE) = 0, """", VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 16, FALSE))"
+    .Range("C28").Formula = "=IF(VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 17, FALSE) = 0, """", VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 17, FALSE))"
+    .Range("C29").Formula = "=IF(VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 18, FALSE) = 0, """", VLOOKUP($C$3, '1 Personnel'!$A$5:$R$93, 18, FALSE))"
+    
+    
+    'Child 1 Personal Details
+    .Range("A17").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 5, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 5, FALSE))"
+    .Range("C17").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 6, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 6, FALSE))"
+    .Range("D17").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 7, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 7, FALSE))"
+    .Range("F17").Formula = "=IF(VLOOKUP($C$7,'2 Children'!$A$5:$AH$100,8,FALSE)=0,"""",VLOOKUP($C$7,'2 Children'!$A$5:$AH$100,8,FALSE))"
+    .Range("H17").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 9, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 9, FALSE))"
+    .Range("J17").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 10, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 10, FALSE))"
+    'Child 2 Personal Details
+    .Range("A18").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 11, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 11, FALSE))"
+    .Range("C18").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 12, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 12, FALSE))"
+    .Range("D18").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 13, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 13, FALSE))"
+    .Range("F18").Formula = "=IF(VLOOKUP($C$7,'2 Children'!$A$5:$AH$100,14,FALSE)=0,"""",VLOOKUP($C$7,'2 Children'!$A$5:$AH$100,14,FALSE))"
+    .Range("H18").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 15, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 15, FALSE))"
+    .Range("J18").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 16, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 16, FALSE))"
+    'Child 3 Personal Details
+    .Range("A19").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 17, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 17, FALSE))"
+    .Range("C19").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 18, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 18, FALSE))"
+    .Range("D19").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 19, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 19, FALSE))"
+    .Range("F19").Formula = "=IF(VLOOKUP($C$7,'2 Children'!$A$5:$AH$100,20,FALSE)=0,"""",VLOOKUP($C$7,'2 Children'!$A$5:$AH$100,20,FALSE))"
+    .Range("H19").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 21, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 21, FALSE))"
+    .Range("J19").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 22, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 22, FALSE))"
+    'Child 4 Personal Details
+    .Range("A20").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 23, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 23, FALSE))"
+    .Range("C20").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 24, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 24, FALSE))"
+    .Range("D20").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 25, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 25, FALSE))"
+    .Range("F20").Formula = "=IF(VLOOKUP($C$7,'2 Children'!$A$5:$AH$100,26,FALSE)=0,"""",VLOOKUP($C$7,'2 Children'!$A$5:$AH$100,26,FALSE))"
+    .Range("H20").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 27, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 27, FALSE))"
+    .Range("J20").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 28, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 28, FALSE))"
+    'Child 5 Personal Details
+    .Range("A21").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 29, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 29, FALSE))"
+    .Range("C21").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 30, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 30, FALSE))"
+    .Range("D21").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 31, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 31, FALSE))"
+    .Range("F21").Formula = "=IF(VLOOKUP($C$7,'2 Children'!$A$5:$AH$100,32,FALSE)=0,"""",VLOOKUP($C$7,'2 Children'!$A$5:$AH$100,32,FALSE))"
+    .Range("H21").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 33, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 33, FALSE))"
+    .Range("J21").Formula = "=IF(VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 34, FALSE) = 0, """", VLOOKUP($C$7, '2 Children'!$A$5:$AH$100, 34, FALSE))"
+    
+    
+     'Member Emergency Health Information
+    .Range("B33").Formula = "=VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 4, FALSE)"
+    .Range("J33").Formula = "=IF(VLOOKUP($C$7,'3 Emerg Info'!$A$5:$U$72,5,FALSE)=0,"""",VLOOKUP($C$7,'3 Emerg Info'!$A$5:$U$72,5,FALSE))"
+    .Range("C34").Formula = "=IF(VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 6, FALSE) = 0, """", VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 6, FALSE))"
+    'Child 1 Emergency Health Information
+    .Range("B35").Formula = "=IF(VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 7, FALSE) = 0, """", VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 7, FALSE))"
+    .Range("J35").Formula = "=IF(VLOOKUP($C$7,'3 Emerg Info'!$A$5:$U$72,8,FALSE)=0,"""",VLOOKUP($C$7,'3 Emerg Info'!$A$5:$U$72,8,FALSE))"
+    .Range("C36").Formula = "=IF(VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 9, FALSE) = 0, """", VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 9, FALSE))"
+    'Child 2 Emergency Health Information
+    .Range("B37").Formula = "=IF(VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 10, FALSE) = 0, """", VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 10, FALSE))"
+    .Range("J37").Formula = "=IF(VLOOKUP($C$7,'3 Emerg Info'!$A$5:$U$72,11,FALSE)=0,"""",VLOOKUP($C$7,'3 Emerg Info'!$A$5:$U$72,11,FALSE))"
+    .Range("C38").Formula = "=IF(VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 12, FALSE) = 0, """", VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 12, FALSE))"
+    'Child 3 Emergency Health Information
+    .Range("B39").Formula = "=IF(VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 13, FALSE) = 0, """", VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 13, FALSE))"
+    .Range("J39").Formula = "=IF(VLOOKUP($C$7,'3 Emerg Info'!$A$5:$U$72,14,FALSE)=0,"""",VLOOKUP($C$7,'3 Emerg Info'!$A$5:$U$72,14,FALSE))"
+    .Range("C40").Formula = "=IF(VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 15, FALSE) = 0, """", VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 15, FALSE))"
+    'Child 4 Emergency Health Information
+    .Range("B41").Formula = "=IF(VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 16, FALSE) = 0, """", VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 16, FALSE))"
+    .Range("J41").Formula = "=IF(VLOOKUP($C$7,'3 Emerg Info'!$A$5:$U$72, 17,FALSE)=0,"""",VLOOKUP($C$7,'3 Emerg Info'!$A$5:$U$72,17,FALSE))"
+    .Range("C42").Formula = "=IF(VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 18, FALSE) = 0, """", VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 18, FALSE))"
+    'Child 5 Emergency Health Information
+    .Range("B43").Formula = "=IF(VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 19, FALSE) = 0, """", VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 19, FALSE))"
+    .Range("J43").Formula = "=IF(VLOOKUP($C$7,'3 Emerg Info'!$A$5:$U$72,20,FALSE)=0,"""",VLOOKUP($C$7,'3 Emerg Info'!$A$5:$U$72,20,FALSE))"
+    .Range("C44").Formula = "=IF(VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 21, FALSE) = 0, """", VLOOKUP($C$7, '3 Emerg Info'!$A$5:$U$100, 21, FALSE))"
+    
+    'Member Insurance Info for Group Hospitalizationand Surgical Insurance (GHS)
+    .Range("B49").Formula = "=VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 5, FALSE)"
+    .Range("H49").Formula = "=IF(VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 6, FALSE) = 0, """", VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 6, FALSE))"
+    .Range("C50").Formula = "=IF(VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 7, FALSE) = 0, """", VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 7, FALSE))"
+    .Range("B51").Formula = "=IF(VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 8, FALSE) = 0, """", VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 8, FALSE))"
+    'Personal Accident Insurance
+    .Range("B54").Formula = "=IF(VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 9, FALSE) = 0, """", VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 9, FALSE))"
+    .Range("H54").Formula = "=IF(VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 10, FALSE) = 0, """", VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 10, FALSE))"
+    .Range("C55").Formula = "=IF(VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 11, FALSE) = 0, """", VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 11, FALSE))"
+    .Range("B56").Formula = "=IF(VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 12, FALSE) = 0, """", VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 12, FALSE))"
+    'Emergency Medical Evacuation Insurance
+    .Range("B59").Formula = "=IF(VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 13, FALSE) = 0, """", VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 13, FALSE))"
+    .Range("H59").Formula = "=IF(VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 14, FALSE) = 0, """", VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 14, FALSE))"
+    .Range("C60").Formula = "=IF(VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 15, FALSE) = 0, """", VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 15, FALSE))"
+    .Range("I60").Formula = "=IF(VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 16, FALSE) = 0, """", VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 16, FALSE))"
+    .Range("B61").Formula = "=IF(VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 17, FALSE) = 0, """", VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 17, FALSE))"
+    'Annual Travel Insurance
+    .Range("B64").Formula = "=IF(VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 18, FALSE) = 0, """", VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 18, FALSE))"
+    .Range("H64").Formula = "=IF(VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 19, FALSE) = 0, """", VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 19, FALSE))"
+    .Range("C65").Formula = "=IF(VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 20, FALSE) = 0, """", VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 20, FALSE))"
+    .Range("I65").Formula = "=IF(VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 21, FALSE) = 0, """", VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 21, FALSE))"
+    .Range("B66").Formula = "=IF(VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 22, FALSE) = 0, """", VLOOKUP($C$7, '4 Insurance'!$A$5:$V$100, 22, FALSE))"
+    
+    'Emergency Contact 1 Information
+    .Range("B70").Formula = "=IF(VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 5, FALSE) = 0, """", VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 5, FALSE))"
+    .Range("B71").Formula = "=IF(VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 7, FALSE) = 0, """", VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 7, FALSE))"
+    .Range("H70").Formula = "=IF(VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 6, FALSE) = 0, """", VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 6, FALSE))"
+    .Range("H71").Formula = "=IF(VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 8, FALSE) = 0, """", VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 8, FALSE))"
+    .Range("B72").Formula = "=IF(VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 9, FALSE) = 0, """", VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 9, FALSE))"
+    .Range("C73").Formula = "=IF(VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 10, FALSE) = 0, """", VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 10, FALSE))"
+    'Emergency Contact 2 Information
+    .Range("B75").Formula = "=IF(VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 11, FALSE) = 0, """", VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 11, FALSE))"
+    .Range("B76").Formula = "=IF(VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 13, FALSE) = 0, """", VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 13, FALSE))"
+    .Range("H75").Formula = "=IF(VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 12, FALSE) = 0, """", VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 12, FALSE))"
+    .Range("H76").Formula = "=IF(VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 14, FALSE) = 0, """", VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 14, FALSE))"
+    .Range("B77").Formula = "=IF(VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 15, FALSE) = 0, """", VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 15, FALSE))"
+    .Range("C78").Formula = "=IF(VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 16, FALSE) = 0, """", VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 16, FALSE))"
+    'Emergency Contact on Field Information
+    .Range("B81").Formula = "=IF(VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 17, FALSE) = 0, """", VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 17, FALSE))"
+    .Range("B82").Formula = "=IF(VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 19, FALSE) = 0, """", VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 19, FALSE))"
+    .Range("B83").Formula = "=IF(VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 21, FALSE) = 0, """", VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 21, FALSE))"
+    .Range("H81").Formula = "=IF(VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 18, FALSE) = 0, """", VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 18, FALSE))"
+    .Range("H82").Formula = "=IF(VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 20, FALSE) = 0, """", VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 20, FALSE))"
+    .Range("H83").Formula = "=IF(VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 22, FALSE) = 0, """", VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 22, FALSE))"
+    .Range("C84").Formula = "=IF(VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 23, FALSE) = 0, """", VLOOKUP($C$7, '5 Emerg Contact'!$A$5:$W$100, 23, FALSE))"
+    
+    
+    'Church Membership
+    .Range("C88").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 5, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 5, FALSE))"
+    .Range("C89").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 6, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 6, FALSE))"
+    .Range("C90").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 7, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 7, FALSE))"
+    .Range("C91").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 8, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 8, FALSE))"
+    .Range("C92").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 9, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 9, FALSE))"
+    .Range("C93").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 10, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 10, FALSE))"
+    .Range("C94").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 11, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 11, FALSE))"
+    .Range("C95").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 12, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 12, FALSE))"
+    '---------- Other Supporting Church 1 ---------------------
+    .Range("C98").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 13, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 13, FALSE))"
+    .Range("C99").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 14, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 14, FALSE))"
+    .Range("C100").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 15, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 15, FALSE))"
+    .Range("C101").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 16, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 16, FALSE))"
+    .Range("C102").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 17, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 17, FALSE))"
+    .Range("C103").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 18, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 18, FALSE))"
+    .Range("C104").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 19, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 19, FALSE))"
+    .Range("C105").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 20, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 20, FALSE))"
+    '---------- Other Supporting Church 2 ---------------------
+    .Range("C107").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 21, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 21, FALSE))"
+    .Range("C108").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 22, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 22, FALSE))"
+    .Range("C109").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 23, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 23, FALSE))"
+    .Range("C110").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 24, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 24, FALSE))"
+    .Range("C111").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 25, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 25, FALSE))"
+    .Range("C112").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 26, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 26, FALSE))"
+    .Range("C113").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 27, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 27, FALSE))"
+    .Range("C114").Formula = "=IF(VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 28, FALSE) = 0, """", VLOOKUP($C$7, '6 Ch Info'!$A$5:$AB$100, 28, FALSE))"
+    
+    'Educational and Professional Qualifications - 7 rows each has period/institution/location/certification/award
+    .Range("A119").Formula = "=IF(VLOOKUP($C$7, '7 Qual'!$A$5:$K$87, 5, FALSE) = 0, """", VLOOKUP($C$7, '7 Qual'!$A$5:$K$87, 5, FALSE))"
+    .Range("A120").Formula = "=IF(VLOOKUP($C$7, '7 Qual'!$A$5:$K$87, 6, FALSE) = 0, """", VLOOKUP($C$7, '7 Qual'!$A$5:$K$87, 6, FALSE))"
+    .Range("A121").Formula = "=IF(VLOOKUP($C$7, '7 Qual'!$A$5:$K$87, 7, FALSE) = 0, """", VLOOKUP($C$7, '7 Qual'!$A$5:$K$87, 7, FALSE))"
+    .Range("A122").Formula = "=IF(VLOOKUP($C$7, '7 Qual'!$A$5:$K$87, 8, FALSE) = 0, """", VLOOKUP($C$7, '7 Qual'!$A$5:$K$87, 8, FALSE))"
+    .Range("A123").Formula = "=IF(VLOOKUP($C$7, '7 Qual'!$A$5:$K$87, 9, FALSE) = 0, """", VLOOKUP($C$7, '7 Qual'!$A$5:$K$87, 9, FALSE))"
+    .Range("A124").Formula = "=IF(VLOOKUP($C$7, '7 Qual'!$A$5:$K$87, 10, FALSE) = 0, """", VLOOKUP($C$7, '7 Qual'!$A$5:$K$87, 10, FALSE))"
+    .Range("A125").Formula = "=IF(VLOOKUP($C$7, '7 Qual'!$A$5:$K$87, 11, FALSE) = 0, """", VLOOKUP($C$7, '7 Qual'!$A$5:$K$87, 11, FALSE))"
+    
+    'Affiliations - The first section contains general affiliation information
+    .Range("C130").Formula = "=IF(VLOOKUP($C$7,'8 Affl'!$A$5:$BG$100, 5, FALSE) = 0, """", VLOOKUP($C$7,'8 Affl'!$A$5:$BG$100, 5, FALSE))"
+    .Range("C131").Formula = "=IF(VLOOKUP($C$7,'8 Affl'!$A$5:$BG$100, 6, FALSE) = 0, """", VLOOKUP($C$7,'8 Affl'!$A$5:$BG$100, 6, FALSE))"
+    .Range("C132").Formula = "=IF(VLOOKUP($C$7,'8 Affl'!$A$5:$BG$100, 7, FALSE) = 0, """", VLOOKUP($C$7,'8 Affl'!$A$5:$BG$100, 7, FALSE))"
+    .Range("C133").Formula = "=IF(VLOOKUP($C$7,'8 Affl'!$A$5:$BG$100, 8, FALSE) = 0, """", VLOOKUP($C$7,'8 Affl'!$A$5:$BG$100, 8, FALSE))"
+    .Range("C134").Formula = "=IF(VLOOKUP($C$7,'8 Affl'!$A$5:$BG$100, 9, FALSE) = 0, """", VLOOKUP($C$7,'8 Affl'!$A$5:$BG$100, 9, FALSE))"
+    .Range("C135").Formula = "=IF(VLOOKUP($C$7,'8 Affl'!$A$5:$BG$100, 10, FALSE) = 0, """", VLOOKUP($C$7,'8 Affl'!$A$5:$BG$100, 10, FALSE))"
+    '----- Specific affiliation 1 --------------------
+    .Range("A138").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100,11, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 11, FALSE))"
+    .Range("B138").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 12, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 12, FALSE))"
+    .Range("C138").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 13, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 13, FALSE))"
+    '----- Specific affiliation 2 --------------------
+    .Range("A139").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100,14, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 14, FALSE))"
+    .Range("B139").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 15, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 15, FALSE))"
+    .Range("C139").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 16, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 16, FALSE))"
+    '----- Specific affiliation 3 --------------------
+    .Range("A140").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100,17, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 17, FALSE))"
+    .Range("B140").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 18, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 18, FALSE))"
+    .Range("C140").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 19, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 19, FALSE))"
+    '----- Specific affiliation 4 --------------------
+    .Range("A141").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100,20, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 20, FALSE))"
+    .Range("B141").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 21, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 21, FALSE))"
+    .Range("C141").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 22, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 22, FALSE))"
+    '----- Specific affiliation 5 --------------------
+    .Range("A142").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100,23, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 23, FALSE))"
+    .Range("B142").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 24, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 24, FALSE))"
+    .Range("C142").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 25, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 25, FALSE))"
+    '----- Specific affiliation 6 --------------------
+    .Range("A143").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100,26, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 26, FALSE))"
+    .Range("B143").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 27, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 27, FALSE))"
+    .Range("C143").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 28, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 28, FALSE))"
+    '----- Specific affiliation 7 --------------------
+    .Range("A144").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100,29, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 29, FALSE))"
+    .Range("B144").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 30, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 30, FALSE))"
+    .Range("C144").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 31, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 31, FALSE))"
+    '----- Specific affiliation 8 --------------------
+    .Range("A145").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100,32, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 32, FALSE))"
+    .Range("B145").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 33, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 33, FALSE))"
+    .Range("C145").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 34, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 34, FALSE))"
+    '----- Specific affiliation 9 --------------------
+    .Range("A146").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100,35, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 35, FALSE))"
+    .Range("B146").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 36, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 36, FALSE))"
+    .Range("C146").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 37, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 37, FALSE))"
+    '----- Specific affiliation 10 --------------------
+    .Range("A147").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100,38, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 38, FALSE))"
+    .Range("B147").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 39, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 39, FALSE))"
+    .Range("C147").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 40, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 40, FALSE))"
+    '----- Specific affiliation 11 --------------------
+    .Range("A148").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100,41, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 41, FALSE))"
+    .Range("B148").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 42, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 42, FALSE))"
+    .Range("C148").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 43, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 43, FALSE))"
+    '----- Specific affiliation 12 --------------------
+    .Range("A149").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100,44, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 44, FALSE))"
+    .Range("B149").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 45, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 45, FALSE))"
+    .Range("C149").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 46, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 46, FALSE))"
+    '----- Specific affiliation 13 --------------------
+    .Range("A150").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100,47, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 47, FALSE))"
+    .Range("B150").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 48, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 48, FALSE))"
+    .Range("C150").Formula = "=IF(VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 49, FALSE) = 0, """", VLOOKUP($C$7, '8 Affl'!$A$5:$BA$100, 49, FALSE))"
+    
+    
+    'Assignments - each assignment contains: start date; end date; title/assgn PO, location/status; supervisor; FTE
+    '----- Specific Assignment 1 --------------------
+    .Range("A155").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 5, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 5, FALSE))"
+    .Range("B155").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 6, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 6, FALSE))"
+    .Range("C155").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 7, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 7, FALSE))"
+    .Range("H155").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,8,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,8,FALSE))"
+    .Range("J155").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DE$100, 9, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DE$100, 9, FALSE))"
+    '----- Specific Assignment 2 --------------------
+    .Range("A156").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 10, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 10, FALSE))"
+    .Range("B156").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 11, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 11, FALSE))"
+    .Range("C156").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 12, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 12, FALSE))"
+    .Range("H156").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,13,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,13,FALSE))"
+    .Range("J156").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 14, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 14, FALSE))"
+    '----- Specific Assignment 3 --------------------
+    .Range("A157").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 15, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 15, FALSE))"
+    .Range("B157").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 16, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 16, FALSE))"
+    .Range("C157").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 17, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 17, FALSE))"
+    .Range("H157").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,18,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,18,FALSE))"
+    .Range("J157").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 19, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 19, FALSE))"
+    '----- Specific Assignment 4 --------------------
+    .Range("A158").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 20, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 20, FALSE))"
+    .Range("B158").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 21, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 21, FALSE))"
+    .Range("C158").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 22, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 22, FALSE))"
+    .Range("H158").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,23,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,23,FALSE))"
+    .Range("J158").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 24, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 24, FALSE))"
+    '----- Specific Assignment 5 --------------------
+    .Range("A159").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 25, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 25, FALSE))"
+    .Range("B159").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 26, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 26, FALSE))"
+    .Range("C159").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 27, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 27, FALSE))"
+    .Range("H159").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,28,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,28,FALSE))"
+    .Range("J159").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 29, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 29, FALSE))"
+    '----- Specific Assignment 6 --------------------
+    .Range("A160").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 30, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 30, FALSE))"
+    .Range("B160").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 31, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 31, FALSE))"
+    .Range("C160").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 32, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 32, FALSE))"
+    .Range("H160").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,33,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,33,FALSE))"
+    .Range("J160").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 34, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 34, FALSE))"
+    '----- Specific Assignment 7 --------------------
+    .Range("A161").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 35, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 35, FALSE))"
+    .Range("B161").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 36, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 36, FALSE))"
+    .Range("C161").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 37, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 37, FALSE))"
+    .Range("H161").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,38,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,38,FALSE))"
+    .Range("J161").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 39, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 39, FALSE))"
+    '----- Specific Assignment 8 --------------------
+    .Range("A162").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 40, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 40, FALSE))"
+    .Range("B162").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 41, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 41, FALSE))"
+    .Range("C162").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 42, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 42, FALSE))"
+    .Range("H162").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,43,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,43,FALSE))"
+    .Range("J162").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 44, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 44, FALSE))"
+    '----- Specific Assignment 9 --------------------
+    .Range("A163").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 45, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 45, FALSE))"
+    .Range("B163").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 46, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 46, FALSE))"
+    .Range("C163").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 47, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 47, FALSE))"
+    .Range("H163").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,48,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,48,FALSE))"
+    .Range("J163").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 49, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 49, FALSE))"
+    '----- Specific Assignment 10 --------------------
+    .Range("A164").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 50, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 50, FALSE))"
+    .Range("B164").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 51, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 51, FALSE))"
+    .Range("C164").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 52, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 52, FALSE))"
+    .Range("H164").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,53,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,53,FALSE))"
+    .Range("J164").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 54, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 54, FALSE))"
+    '----- Specific Assignment 11 --------------------
+    .Range("A165").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 55, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 55, FALSE))"
+    .Range("B165").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 56, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 56, FALSE))"
+    .Range("C165").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 57, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 57, FALSE))"
+    .Range("H165").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,58,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,58,FALSE))"
+    .Range("J165").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,59,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,59,FALSE))"
+    '----- Specific Assignment 12 --------------------
+    .Range("A166").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 60, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 60, FALSE))"
+    .Range("B166").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 61, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 61, FALSE))"
+    .Range("C166").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 62, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 62, FALSE))"
+    .Range("H166").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,63,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,63,FALSE))"
+    .Range("J166").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 64, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 64, FALSE))"
+    '----- Specific Assignment 13 --------------------
+    .Range("A167").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 65, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 65, FALSE))"
+    .Range("B167").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 66, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 66, FALSE))"
+    .Range("C167").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 67, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 67, FALSE))"
+    .Range("H167").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,68,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,68,FALSE))"
+    .Range("J167").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 69, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 69, FALSE))"
+    '----- Specific Assignment 14 --------------------
+    .Range("A168").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 70, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 70, FALSE))"
+    .Range("B168").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 71, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 71, FALSE))"
+    .Range("C168").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 72, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 72, FALSE))"
+    .Range("H168").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,73,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,73,FALSE))"
+    .Range("J168").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 74, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 74, FALSE))"
+    '----- Specific Assignment 15 --------------------
+    .Range("A169").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 75, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 75, FALSE))"
+    .Range("B169").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 76, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 76, FALSE))"
+    .Range("C169").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 77, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 77, FALSE))"
+    .Range("H169").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,78,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,78,FALSE))"
+    .Range("J169").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 79, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 79, FALSE))"
+    '----- Specific Assignment 16 --------------------
+    .Range("A170").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 80, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 80, FALSE))"
+    .Range("B170").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 81, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 81, FALSE))"
+    .Range("C170").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 82, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 82, FALSE))"
+    .Range("H170").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,83,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,83,FALSE))"
+    .Range("J170").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 84, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 84, FALSE))"
+    '----- Specific Assignment 17 --------------------
+    .Range("A171").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 85, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 85, FALSE))"
+    .Range("B171").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 86, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 86, FALSE))"
+    .Range("C171").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 87, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 87, FALSE))"
+    .Range("H171").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,88,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,88,FALSE))"
+    .Range("J171").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 89, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 89, FALSE))"
+    '----- Specific Assignment 18 --------------------
+    .Range("A172").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 90, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 90, FALSE))"
+    .Range("B172").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 91, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 91, FALSE))"
+    .Range("C172").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 92, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 92, FALSE))"
+    .Range("H172").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,93,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,93,FALSE))"
+    .Range("J172").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 94, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 94, FALSE))"
+    '----- Specific Assignment 19 --------------------
+    .Range("A173").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 95, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 95, FALSE))"
+    .Range("B173").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 96, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 96, FALSE))"
+    .Range("C173").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 97, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 97, FALSE))"
+    .Range("H173").Formula = "=IF(VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,98,FALSE)=0,"""",VLOOKUP($C$7,'9 Assgm'!$A$5:$DU$100,98,FALSE))"
+    .Range("J173").Formula = "=IF(VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 99, FALSE) = 0, """", VLOOKUP($C$7, '9 Assgm'!$A$5:$DU$100, 99, FALSE))"
+    
+    'Important Documents
+     .Range("A179").Formula = "=IF(VLOOKUP($C$7, '10 Impt Docs'!$A$5:$K$100, 5, FALSE) = 0, """", VLOOKUP($C$7, '10 Impt Docs'!$A$5:$K$100, 5, FALSE))"
+    .Range("A180").Formula = "=IF(VLOOKUP($C$7, '10 Impt Docs'!$A$5:$K$100, 6, FALSE) = 0, """", VLOOKUP($C$7, '10 Impt Docs'!$A$5:$K$100, 6, FALSE))"
+    .Range("A181").Formula = "=IF(VLOOKUP($C$7, '10 Impt Docs'!$A$5:$K$100, 7, FALSE) = 0, """", VLOOKUP($C$7, '10 Impt Docs'!$A$5:$K$100, 7, FALSE))"
+    .Range("A182").Formula = "=IF(VLOOKUP($C$7, '10 Impt Docs'!$A$5:$K$100, 8, FALSE) = 0, """", VLOOKUP($C$7, '10 Impt Docs'!$A$5:$K$100, 8, FALSE))"
+    .Range("A183").Formula = "=IF(VLOOKUP($C$7, '10 Impt Docs'!$A$5:$K$100, 9, FALSE) = 0, """", VLOOKUP($C$7, '10 Impt Docs'!$A$5:$K$100, 9, FALSE))"
+    .Range("A184").Formula = "=IF(VLOOKUP($C$7, '10 Impt Docs'!$A$5:$K$100, 10, FALSE) = 0, """", VLOOKUP($C$7, '10 Impt Docs'!$A$5:$K$100, 10, FALSE))"
+    .Range("A185").Formula = "=IF(VLOOKUP($C$7, '10 Impt Docs'!$A$5:$K$100, 11, FALSE) = 0, """", VLOOKUP($C$7, '10 Impt Docs'!$A$5:$K$100, 11, FALSE))"
+    .Range("A186").Formula = "=IF(VLOOKUP($C$7, '10 Impt Docs'!$A$5:$O$100, 12, FALSE) = 0, """", VLOOKUP($C$7, '10 Impt Docs'!$A$5:$O$100, 12, FALSE))"
+    .Range("C186").Formula = "=IF(VLOOKUP($C$7, '10 Impt Docs'!$A$5:$O$100, 13, FALSE) = 0, """", VLOOKUP($C$7, '10 Impt Docs'!$A$5:$O$100, 13, FALSE))"
+    
+End With
+    
+End Sub
+
+Public Sub MetaRefreshFormulae()
+' Calls the ImplementRefresh subroutine to refresh the Database worksheet
+' with original formulae if the message to continue is approved.  Otherwise,
+' the call is cancelled.
+
+   Result = MsgBox("Do you want to continue with refreshing the worksheet formulae?", vbOKCancel + vbQuestion)
+   If Result = vbOK Then
+       RefreshFormulae
+   Else
+      'Do nothing - cancel the refresh
+   End If
+
+End Sub
+
+Private Function GetRow(ByVal tgtWkShtName As String, ByVal SearchKeyVal As String, _
+                                    Optional ByRef tgtWkBk As Workbook = Nothing) As Integer
+'Returns the Integer index of the row on which the SearchKeyVal is found.
+'Otherwise, the index of the first empty row is returned.
+'Parameters: name of the worksheet to be searched, and search key value, with both of type String
+
+    Dim fr_sht As Object, to_sht As Object
+    Dim SearchRange As Object
+    Dim to_lastrow As Integer
+    Dim FindRange As Object
+    
+    Debug.Print "===In GetRow==="
+    
+    'Designate the source and target worksheets
+    'The source worksheet is "DATABASE" and the search key value is found on the source worksheet
+    'Set fr_sht = Worksheets("DATABASE")
+    If tgtWkBk Is Nothing Then
+         Set to_sht = ThisWorkbook.Worksheets(tgtWkShtName)
+    Else
+        'Target worksheet is in a different workbook
+         Set to_sht = tgtWkBk.Worksheets(tgtWkShtName)
+         Debug.Print "Target worksheet for GetRow is in a different workbook."
+    End If
+    
+    'Find the last row in the target worksheet.  We assume that every target worksheet starts content from 5th row
+     Set SearchRange = to_sht.Range("A5", to_sht.Range("A5").End(xlDown))
+     Debug.Print "Row count of SearchRange: " & SearchRange.Rows.Count
+'    If SearchRange.Rows.Count > 100000 Then
+'         'The worksheet content is empty.
+'         to_lastrow = 4
+'    Else
+'         to_lastrow = 4 + SearchRange.Rows.Count
+'    End If
+'    Debug.Print "Last row in the target worksheet:" & to_lastrow
+    
+    'Using the key value, search the target Worksheet for the row number
+    Debug.Print "Search Key Value: " & SearchKeyVal
+    Set FindRange = SearchRange.Find(SearchKeyVal, LookIn:=xlValues, lookat:=xlWhole)
+    
+    'If the row returns nothing, the key value is not found and the new record is written to the first empty row after the last row
+    If (Not FindRange Is Nothing) Then
+        to_row = FindRange.Row
+        Debug.Print "Found SearchKeyVal at row: " & to_row
+    Else
+        to_lastrow = GetLastRow(tgtWkShtName, tgtWkBk)
+        to_row = to_lastrow + 1
+        Debug.Print "SearchKeyVal Not Found; add new row at:" & to_row
+    End If
+    
+    GetRow = to_row
+
+End Function
+
+Private Sub UpdatePersonnel(MemberName As String, Optional toWkBk As Workbook = Nothing)
+'This sub updates the "1 Personnel" worksheet which contains the Members' personal information.
+'The updated information comes from the DATABASE worksheet
+'Worksheet Key: Legal Name
+
+    Dim fr_sht As Object, to_sht As Object
+    Dim to_row As Integer
+    Dim SearchValue As String
+    
+    Const toShtName As String = "1 Personnel"
+    Const frShtName As String = "DATABASE"
+    'Const SearchCellAddr As String = "C3"
+    
+    Debug.Print "===In UpdatePersonnel==="
+
+    Set fr_sht = ThisWorkbook.Worksheets(frShtName)
+    If toWkBk Is Nothing Then
+          Set to_sht = ThisWorkbook.Worksheets(toShtName)
+    Else
+          'This target worksheet is in a different workbook from the source.
+          Set to_sht = toWkBk.Worksheets(toShtName)
+          Debug.Print "Target worksheet for UpdatePersonnel is in a different workbook."
+    End If
+          
+    'Get the key value from the Cell containing the member's name; note that C7 and D7 are merged
+    SearchValue = MemberName    ' fr_sht.Range(SearchCellAddr).Value
+    Debug.Print "Search Key Value: " & SearchValue
+    
+    'Search the target worksheet for the row in which key value is found
+    to_row = GetRow(toShtName, SearchValue, toWkBk)
+    Debug.Print "GetRow returns row: " & to_row
+    
+    'Update the relevant fields in the Personnel worksheet
+    'Update the Personal Details
+    to_sht.Cells(to_row, 3).Value = fr_sht.Range("C7").Value
+    to_sht.Cells(to_row, 1).Value = fr_sht.Range("C8").Value
+    to_sht.Cells(to_row, 5).Value = fr_sht.Range("C9").Value   ' Chinese name
+    to_sht.Cells(to_row, 7).Value = fr_sht.Range("C10").Value
+    to_sht.Cells(to_row, 9).Value = fr_sht.Range("C11").Value
+    to_sht.Cells(to_row, 11).Value = fr_sht.Range("C12").Value
+    to_sht.Cells(to_row, 2).Value = fr_sht.Range("H7").Value    'CVCM ID - should be string, bcos may start with 0
+    to_sht.Cells(to_row, 4).Value = fr_sht.Range("H8").Value
+    to_sht.Cells(to_row, 6).Value = fr_sht.Range("H9").Value
+    to_sht.Cells(to_row, 8).Value = fr_sht.Range("H10").Value   ' Date of birth
+    to_sht.Cells(to_row, 10).Value = fr_sht.Range("H11").Value
+    to_sht.Cells(to_row, 12).Value = fr_sht.Range("H12").Value
+    'Update the contact details
+    to_sht.Cells(to_row, 13).Value = fr_sht.Range("C23").Value
+    to_sht.Cells(to_row, 14).Value = fr_sht.Range("C24").Value
+    to_sht.Cells(to_row, 15).Value = fr_sht.Range("C25").Value
+    to_sht.Cells(to_row, 16).Value = fr_sht.Range("C27").Value
+    to_sht.Cells(to_row, 17).Value = fr_sht.Range("C28").Value   ' Field email - should change to string type
+    to_sht.Cells(to_row, 18).Value = fr_sht.Range("C29").Value
+
+End Sub
+
+
+Private Sub UpdateChildren(HouseholdID As String, SpouseHouseHoldID As String, _
+                                          Optional UpdateForSpouse As Boolean = True, _
+                                          Optional toWkBk As Workbook = Nothing)
+
+    ' This sub updates the "2 Children" worksheet which contains the children's information.
+    ' Assumption: at most 5 children are recorded.
+    ' The updated information comes from the DATABASE worksheet
+    ' Worksheet Key: Household ID of member
+    
+    Dim fr_sht As Object, to_sht As Object
+    Dim to_row As Integer
+    Dim SearchValue As String
+    
+    Const toShtName As String = "2 Children"
+    Const frShtName As String = "DATABASE"
+    'Const SearchCellAddr As String = "C7"    ' Cell address of Household ID
+    'Const SpouseHIdAddr As String = "H12"    ' Cell address of Spouse's Household ID
+    
+    Debug.Print "===In UpdateChildren==="
+    
+    Set fr_sht = ThisWorkbook.Worksheets(frShtName)
+    'Check if target worksheet is on a different workbook
+    If toWkBk Is Nothing Then
+        Set to_sht = ThisWorkbook.Worksheets(toShtName)
+    Else
+       'The worksheet is on a different workbook
+        Set to_sht = toWkBk.Worksheets(toShtName)
+        Debug.Print "Target worksheet for UpdateChildren is in a different workbook."
+    End If
+    
+    ' Get the key value from the Cell containing the member's Household ID
+    SearchValue = HouseholdID      'fr_sht.Range(SearchCellAddr).Value
+    Debug.Print "Search Key Value: " & SearchValue
+    
+    ' Search the target worksheet for the row in which key value is found
+    to_row = GetRow(toShtName, SearchValue, toWkBk)
+    Debug.Print "GetRow returns row: " & to_row
+            
+    'Loop through sets of 6 fields for each child
+    MaxNumChildren = 5
+    StartAddrToSht = 5
+    StartAddrFrSht = 17
+    NumFields = 6
+    MaxIndex = MaxNumChildren - 1
+    For ChildIndex = 0 To MaxIndex
+          toIndex = StartAddrToSht + ChildIndex * NumFields
+          frIndex = StartAddrFrSht + ChildIndex
+              Debug.Print "========" & "Child " & CStr(ChildIndex + 1) & "========"
+              to_sht.Cells(to_row, toIndex).Value = fr_sht.Range("A" & frIndex).Value
+              Debug.Print "toIndex: " & toIndex & "  frIndex: " & "A" & frIndex
+              to_sht.Cells(to_row, toIndex + 1).Value = fr_sht.Range("C" & frIndex).Value
+              Debug.Print "toIndex: " & toIndex + 1 & "  frIndex: " & "C" & frIndex
+              to_sht.Cells(to_row, toIndex + 2).Value = fr_sht.Range("D" & frIndex).Value
+              Debug.Print "toIndex: " & toIndex + 2 & "  frIndex: " & "D" & frIndex
+              to_sht.Cells(to_row, toIndex + 3).Value = fr_sht.Range("F" & frIndex).Value
+              Debug.Print "toIndex: " & toIndex + 3 & "  frIndex: " & "F" & frIndex
+              to_sht.Cells(to_row, toIndex + 4).Value = fr_sht.Range("H" & frIndex).Value
+              Debug.Print "toIndex: " & toIndex + 4 & "  frIndex: " & "H" & frIndex
+              to_sht.Cells(to_row, toIndex + 5).Value = fr_sht.Range("J" & frIndex).Value
+              Debug.Print "toIndex: " & toIndex + 5 & "  frIndex: " & "J" & frIndex
+    Next ChildIndex
+    
+
+    'Update the Children info for the Spouse, if Spouse's name is on the Children worksheet
+    Dim FindRange As Range
+    
+    'Get the Spouse's Household ID from Database worksheet ; trim the string of the leading and trailing spaces
+    SpouseHseholdID = SpouseHouseHoldID         'Trim(fr_sht.Range(SpouseHIdAddr).Value)
+    Debug.Print "Spouse Household ID: #" & SpouseHseholdID & "#"
+          
+    'Rename the member row
+    MemberRow = to_row
+    
+    Debug.Print "UpdateForSpouse is: " & UpdateForSpouse
+    
+    If UpdateForSpouse And (Len(SpouseHseholdID) > 0) Then
+        to_lastrow = GetLastRow(toShtName, toWkBk)
+        
+        With to_sht.Range("A5:A" & to_lastrow)   'This is the search range for Household ID on the Children Worksheet
+            Set FindRange = .Find(What:=SpouseHseholdID, LookIn:=xlValues)
+            If Not FindRange Is Nothing Then
+                     SpouseRow = FindRange.Row
+                     'Copy children information to found SpouseRow
+                     Debug.Print "The spouse household ID was found at row: " & SpouseRow
+                     MemberRange = "E" & MemberRow & ":AH" & MemberRow
+                     SpouseRange = "E" & SpouseRow & ":AH" & SpouseRow
+                     Debug.Print "Copy MemberRange:" & MemberRange & " to SpouseRange:" & SpouseRange
+                     to_sht.Range(MemberRange).Copy to_sht.Range(SpouseRange)
+            End If
+        End With
+        
+    End If
+    
+    'Update the first 4 columns of the Member row on Children
+    to_sht.Cells(MemberRow, 1).Value = fr_sht.Range("C7").Value   'Household ID
+    to_sht.Cells(MemberRow, 2).Value = fr_sht.Range("H8").Value   'Affiliation
+    to_sht.Cells(MemberRow, 3).Value = fr_sht.Range("H7").Value   'CVCM ID
+    to_sht.Cells(MemberRow, 4).Value = fr_sht.Range("C8").Value    'Legal Name
+    
+End Sub   'End of UpdateChildren
+
+
+
+Private Sub UpdateEmergInfo(HouseholdID, SpouseHouseHoldID, _
+                                            Optional UpdateForSpouse As Boolean = True, _
+                                            Optional toWkBk As Workbook = Nothing)
+'This sub updates the Emergency Information
+'The emergency information includes children emergency information, up to 5 children
+'Key: Household ID
+
+    Dim fr_sht As Object, to_sht As Object
+    Dim to_row As Integer
+    Dim SearchValue As String
+    
+    Const toShtName As String = "3 Emerg Info"
+    Const frShtName As String = "DATABASE"
+    ' Const SearchCellAddr As String = "C7"    ' Cell address of Household ID
+    ' Const SpouseHIdAddr As String = "H12"    ' Cell address of Spouse's Household ID
+    
+    Debug.Print "===In UpdateEmergInfo==="
+    
+    Set fr_sht = ThisWorkbook.Worksheets(frShtName)
+    'Check if the worksheet is on a different workbook
+    If toWkBk Is Nothing Then
+        Set to_sht = ThisWorkbook.Worksheets(toShtName)
+    Else
+       Set to_sht = toWkBk.Worksheets(toShtName)
+       Debug.Print "Target worksheet for UpdateEmergInfo is in a different workbook."
+    End If
+    
+    ' Get the key value from the Cell containing the member's Household ID
+    SearchValue = HouseholdID        '  fr_sht.Range(SearchCellAddr).Value
+    Debug.Print "Search Key Value: " & SearchValue
+    
+    ' Search the target worksheet for the row in which key value is found
+    to_row = GetRow(toShtName, SearchValue, toWkBk)
+    Debug.Print "GetRow returns row: " & to_row
+    
+    'Update the Emergency Info Worksheet
+    'Member info
+     to_sht.Cells(to_row, 4).Value = fr_sht.Range("B33").Value
+     to_sht.Cells(to_row, 5).Value = fr_sht.Range("J33").Value
+     to_sht.Cells(to_row, 6).Value = fr_sht.Range("C34").Value
+    'Children Info
+    MaxNumChild = 5
+    toIndex = 7               'Starting column on the Emerg Info Worksheet
+    frIndex = 35              'Starting row on the DATABASE Worksheet
+    For ChildCount = 1 To MaxNumChild
+        Debug.Print "=========" & "Child " & ChildCount & "============"
+        to_sht.Cells(to_row, toIndex).Value = fr_sht.Range("B" & frIndex).Value
+        Debug.Print "toIndex: " & toIndex & "  frIndex: " & "B" & frIndex
+        toIndex = toIndex + 1
+        to_sht.Cells(to_row, toIndex).Value = fr_sht.Range("J" & frIndex).Value
+        Debug.Print "toIndex: " & toIndex & "  frIndex: " & "J" & frIndex
+        toIndex = toIndex + 1
+        frIndex = frIndex + 1
+        to_sht.Cells(to_row, toIndex).Value = fr_sht.Range("C" & frIndex).Value
+        Debug.Print "toIndex: " & toIndex & "  frIndex: " & "C" & frIndex
+        toIndex = toIndex + 1
+        frIndex = frIndex + 1
+    Next ChildCount
+       
+    'Update the Emergency Info for the Spouse, if Spouse's Household ID is on the  worksheet
+    Dim FindRange As Range
+    Dim SpouseRow As Integer
+    Dim MemberRange As String, SpouseRange As String
+    
+    'Get the Spouse's Household ID from the DATABASE form; trim the string of the leading and trailing spaces
+    SpouseHseholdID = SpouseHouseHoldID       'Trim(fr_sht.Range(SpouseHIdAddr).Value)
+    Debug.Print "Spouse Household ID: #" & SpouseHseholdID & "#"
+          
+    'Rename the member row
+    MemberRow = to_row
+    
+    Debug.Print "UpdateForSpouse is: " & UpdateForSpouse
+    
+    If UpdateForSpouse And (Len(SpouseHseholdID) > 0) Then
+    
+        to_lastrow = GetLastRow(toShtName, toWkBk)
+        Debug.Print "The last row of the " & toShtName & "worksheet is at: " & to_lastrow
+    
+        With to_sht.Range("A5:A" & to_lastrow)   'This is the search range for Household ID on the Emergency Info Worksheet
+            Set FindRange = .Find(What:=SpouseHseholdID, LookIn:=xlValues)
+            If Not FindRange Is Nothing Then
+                     SpouseRow = FindRange.Row
+                     'Copy Children Emergency information to SpouseRow
+                     Debug.Print "The spouse household ID was found at row: " & SpouseRow
+                     MemberRange = "G" & MemberRow & ":U" & MemberRow
+                     SpouseRange = "G" & SpouseRow & ":U" & SpouseRow
+                     Debug.Print "Copy MemberRange:" & MemberRange & " to SpouseRange:" & SpouseRange
+                     to_sht.Range(MemberRange).Copy to_sht.Range(SpouseRange)
+            End If
+        End With
+    
+    End If
+    
+    'Update the first 4 columns of the Member row on Emerg Info Worksheet
+    to_sht.Cells(MemberRow, 1).Value = fr_sht.Range("C7").Value   'Household ID
+    to_sht.Cells(MemberRow, 2).Value = fr_sht.Range("H8").Value   'Affiliation
+    to_sht.Cells(MemberRow, 3).Value = fr_sht.Range("H7").Value   'CVCM ID
+    to_sht.Cells(MemberRow, 4).Value = fr_sht.Range("C8").Value   'Legal Name
+
+End Sub
+
+Private Sub UpdateInsurance(HouseholdID As String, Optional toWkBk As Workbook = Nothing)
+
+'This sub updates the "4 Insurance" Worksheet
+'Source of the information being updated is the DATABASE worksheet
+'Worksheet Key: Household ID of member
+    
+    Dim fr_sht As Object, to_sht As Object
+    Dim to_row As Integer
+    Dim SearchValue As String
+    Dim MemberRow As Integer
+    
+    Const toShtName As String = "4 Insurance"
+    Const frShtName As String = "DATABASE"
+    'Const SearchCellAddr As String = "C7"    ' Cell address of Household ID
+    
+    Debug.Print "===In UpdateInsurance==="
+    
+    Set fr_sht = ThisWorkbook.Worksheets(frShtName)
+    If toWkBk Is Nothing Then
+         Set to_sht = ThisWorkbook.Worksheets(toShtName)
+    Else
+         Set to_sht = toWkBk.Worksheets(toShtName)
+         Debug.Print "Target worksheet for UpdateInsurance is in a different workbook."
+    End If
+    
+    ' Get the key value from the Cell containing the member's Household ID
+    SearchValue = HouseholdID     ' fr_sht.Range(SearchCellAddr).Value
+    Debug.Print "Search Key Value: " & SearchValue
+    
+    ' Search the target worksheet for the row in which key value is found
+    MemberRow = GetRow(toShtName, SearchValue, toWkBk)
+    Debug.Print "GetRow returns row: " & MemberRow
+        
+    'Update the Insurance Worksheet
+    ''Member Insurance Info for Group Hospitalizationand Surgical Insurance (GHS)
+    to_sht.Cells(MemberRow, 5).Value = fr_sht.Range("B49").Value
+    to_sht.Cells(MemberRow, 6).Value = fr_sht.Range("H49").Value
+    to_sht.Cells(MemberRow, 7).Value = fr_sht.Range("C50").Value
+    to_sht.Cells(MemberRow, 8).Value = fr_sht.Range("B51").Value
+    'Personal Accident Insurance
+    to_sht.Cells(MemberRow, 9).Value = fr_sht.Range("B54").Value
+    to_sht.Cells(MemberRow, 10).Value = fr_sht.Range("H54").Value
+    to_sht.Cells(MemberRow, 11).Value = fr_sht.Range("C55").Value
+    to_sht.Cells(MemberRow, 12).Value = fr_sht.Range("B56").Value
+    'Emergency Medical Evacuation Insurance
+    to_sht.Cells(MemberRow, 13).Value = fr_sht.Range("B59").Value
+    to_sht.Cells(MemberRow, 14).Value = fr_sht.Range("H59").Value
+    to_sht.Cells(MemberRow, 15).Value = fr_sht.Range("C60").Value
+    to_sht.Cells(MemberRow, 16).Value = fr_sht.Range("I60").Value
+    to_sht.Cells(MemberRow, 17).Value = fr_sht.Range("B61").Value
+     'Annual Travel Insurance
+    to_sht.Cells(MemberRow, 18).Value = fr_sht.Range("B64").Value
+    to_sht.Cells(MemberRow, 19).Value = fr_sht.Range("H64").Value
+    to_sht.Cells(MemberRow, 20).Value = fr_sht.Range("C65").Value
+    to_sht.Cells(MemberRow, 21).Value = fr_sht.Range("I65").Value
+    to_sht.Cells(MemberRow, 22).Value = fr_sht.Range("B66").Value
+    
+     'Update the first 4 columns of the Member row on Insurance Worksheet
+    to_sht.Cells(MemberRow, 1).Value = fr_sht.Range("C7").Value   'Household ID
+    to_sht.Cells(MemberRow, 2).Value = fr_sht.Range("H8").Value   'Affiliation
+    to_sht.Cells(MemberRow, 3).Value = fr_sht.Range("H7").Value   'CVCM ID
+    to_sht.Cells(MemberRow, 4).Value = fr_sht.Range("C8").Value   'Legal Name
+
+End Sub
+
+Private Sub UpdateEmergContact(HouseholdID As String, Optional toWkBk As Workbook = Nothing)
+'This sub updates the "5 Emerg Contact" Worksheet
+'Source of the information being updated is the DATABASE worksheet
+'Worksheet Key: Household ID of member
+   
+    Dim fr_sht As Object, to_sht As Object
+    Dim SearchValue As String
+    Dim MemberRow As Integer
+    
+    Const toShtName As String = "5 Emerg Contact"
+    Const frShtName As String = "DATABASE"
+    ' Const SearchCellAddr As String = "C7"    ' Cell address of Household ID
+    
+    Debug.Print "===In UpdateEmergContact==="
+    
+    Set fr_sht = ThisWorkbook.Worksheets(frShtName)
+    'Check if target worksheet is on a different workbook
+    If toWkBk Is Nothing Then
+        Set to_sht = ThisWorkbook.Worksheets(toShtName)
+    Else
+        Set to_sht = toWkBk.Worksheets(toShtName)
+        Debug.Print "Target worksheet for UpdateEmergContact is in a different workbook."
+    End If
+           
+    ' Get the key value from the Cell containing the member's Household ID
+    SearchValue = HouseholdID     ' fr_sht.Range(SearchCellAddr).Value
+    Debug.Print "Search Key Value: " & SearchValue
+    
+    ' Search the target worksheet for the row in which key value is found
+    MemberRow = GetRow(toShtName, SearchValue, toWkBk)
+    Debug.Print "GetRow returns row: " & MemberRow
+ 
+    '===================================================
+    'Update the Emergency Contacts Worksheet
+    'Emergency Contact 1
+    to_sht.Cells(MemberRow, 5).Value = fr_sht.Range("B70").Value
+    to_sht.Cells(MemberRow, 7).Value = fr_sht.Range("B71").Value
+    to_sht.Cells(MemberRow, 6).Value = fr_sht.Range("H70").Value
+    to_sht.Cells(MemberRow, 8).Value = fr_sht.Range("H71").Value
+    to_sht.Cells(MemberRow, 9).Value = fr_sht.Range("B72").Value
+    to_sht.Cells(MemberRow, 10).Value = fr_sht.Range("C73").Value
+    'Emergency Contact 2
+    to_sht.Cells(MemberRow, 11).Value = fr_sht.Range("B75").Value
+    to_sht.Cells(MemberRow, 13).Value = fr_sht.Range("B76").Value
+    to_sht.Cells(MemberRow, 12).Value = fr_sht.Range("H75").Value
+    to_sht.Cells(MemberRow, 14).Value = fr_sht.Range("H76").Value
+    to_sht.Cells(MemberRow, 15).Value = fr_sht.Range("B77").Value
+    to_sht.Cells(MemberRow, 16).Value = fr_sht.Range("C78").Value
+    'Emergency Contact 3
+    to_sht.Cells(MemberRow, 17).Value = fr_sht.Range("B81").Value
+    to_sht.Cells(MemberRow, 19).Value = fr_sht.Range("B82").Value
+    to_sht.Cells(MemberRow, 21).Value = fr_sht.Range("B83").Value
+    to_sht.Cells(MemberRow, 18).Value = fr_sht.Range("H81").Value
+    to_sht.Cells(MemberRow, 20).Value = fr_sht.Range("H82").Value
+    to_sht.Cells(MemberRow, 22).Value = fr_sht.Range("H83").Value
+    to_sht.Cells(MemberRow, 23).Value = fr_sht.Range("C84").Value
+    
+     'Update the first 4 columns of the Member row on Insurance Worksheet
+    to_sht.Cells(MemberRow, 1).Value = fr_sht.Range("C7").Value   'Household ID
+    to_sht.Cells(MemberRow, 2).Value = fr_sht.Range("H8").Value   'Affiliation
+    to_sht.Cells(MemberRow, 3).Value = fr_sht.Range("H7").Value   'CVCM ID
+    to_sht.Cells(MemberRow, 4).Value = fr_sht.Range("C8").Value   'Legal Name
+    
+End Sub
+
+Private Sub UpdateChurchInfo(HouseholdID As String, Optional toWkBk As Workbook = Nothing)
+'This sub updates the "6 Ch Info" Worksheet
+'Source of the information being updated is the DATABASE worksheet
+'Worksheet Key: Household ID of member
+   
+    Dim fr_sht As Object, to_sht As Object
+    Dim SearchValue As String
+    Dim MemberRow As Integer
+    
+    Const toShtName As String = "6 Ch Info"
+    Const frShtName As String = "DATABASE"
+    'Const SearchCellAddr As String = "C7"    ' Cell address of Household ID
+    
+    Debug.Print "===In UpdateChruchInfo==="
+    
+    Set fr_sht = ThisWorkbook.Worksheets(frShtName)
+    'Check if target worksheet is on a different workbook
+    If toWkBk Is Nothing Then
+        Set to_sht = ThisWorkbook.Worksheets(toShtName)
+    Else
+        Set to_sht = toWkBk.Worksheets(toShtName)
+        Debug.Print "Target worksheet for UpdateChurchInfo is in a different workbook."
+    End If
+    
+    ' Get the key value from the Cell containing the member's Household ID
+    SearchValue = HouseholdID   ' fr_sht.Range(SearchCellAddr).Value
+    Debug.Print "Search Key Value: " & SearchValue
+    
+    ' Search the target worksheet for the row in which key value is found
+    MemberRow = GetRow(toShtName, SearchValue, toWkBk)
+    Debug.Print "GetRow returns row: " & MemberRow
+   
+    ' Update the Church Info Worksheet: There are 3 church contacts, each with 8 fields.
+    ' Supporting Church 1: C88-C95 relates to 5-12;
+    ' Supporting Church 2: C98-C105 relates to 13-20;
+    ' Supporting Church 3: C107-C114 relates to 21-28
+    Dim to_col As Integer, fr_row As Integer
+    Dim Church As Integer, Field As Integer
+    Dim ChurchStartRows(1 To 3) As Integer
+    
+    ' Initialize the array
+    ChurchStartRows(1) = 88
+    ChurchStartRows(2) = 98
+    ChurchStartRows(3) = 107
+    to_col = 5
+    For Church = 1 To 3
+            Debug.Print "========== Church " & Church & " =========="
+            fr_row = ChurchStartRows(Church)
+        For Field = 1 To 8
+            Debug.Print "MemberRow: " & MemberRow & "  col: " & to_col & " map from:  C" & fr_row
+            to_sht.Cells(MemberRow, to_col).Value = fr_sht.Range("C" & fr_row).Value
+            to_col = to_col + 1
+            fr_row = fr_row + 1
+        Next Field
+    Next Church
+    
+     'Update the first 4 columns of the Member row on Insurance Worksheet
+    to_sht.Cells(MemberRow, 1).Value = fr_sht.Range("C7").Value   'Household ID
+    to_sht.Cells(MemberRow, 2).Value = fr_sht.Range("H8").Value   'Affiliation
+    to_sht.Cells(MemberRow, 3).Value = fr_sht.Range("H7").Value   'CVCM ID
+    to_sht.Cells(MemberRow, 4).Value = fr_sht.Range("C8").Value   'Legal Name
+    
+End Sub
+
+Private Sub UpdateQualifications(HouseholdID As String, Optional toWkBk As Workbook = Nothing)
+'This sub updates the "7 Qual" Worksheet
+'Source of the information being updated is the DATABASE worksheet
+'Worksheet Key: Household ID of member
+   
+    Dim fr_sht As Object, to_sht As Object
+    Dim SearchValue As String
+    Dim MemberRow As Integer
+    
+    Const toShtName As String = "7 Qual"
+    Const frShtName As String = "DATABASE"
+    'Const SearchCellAddr As String = "C7"    ' Cell address of Household ID
+    
+    Debug.Print "===In UpdateQualifications==="
+    
+    Set fr_sht = ThisWorkbook.Worksheets(frShtName)
+    'Check if target worksheet is on a different workbook
+    If toWkBk Is Nothing Then
+        Set to_sht = ThisWorkbook.Worksheets(toShtName)
+    Else
+        Set to_sht = toWkBk.Worksheets(toShtName)
+        Debug.Print "Target worksheet for UpdateQualifications is on a different workbook."
+    End If
+    
+    ' Get the key value from the Cell containing the member's Household ID
+    SearchValue = HouseholdID        ' fr_sht.Range(SearchCellAddr).Value
+    Debug.Print "Search Key Value: " & SearchValue
+    
+    ' Search the target worksheet for the row in which key value is found
+    MemberRow = GetRow(toShtName, SearchValue, toWkBk)
+    Debug.Print "GetRow returns row: " & MemberRow
+
+    'Update the Qualifications Worksheet: Maximum of 8 Qualifications: A119:A125 copied to cols 5:11 of member row
+    Const MaxNumQual As Integer = 7
+    Dim to_col As Integer, fr_row As Integer
+    to_col = 5
+    fr_row = 119
+    For Qual = 1 To MaxNumQual
+            Debug.Print "MemberRow: " & MemberRow & " col: " & to_col & " maps from: A" & fr_row
+            to_sht.Cells(MemberRow, to_col).Value = fr_sht.Range("A" & fr_row).Value
+            to_col = to_col + 1
+            fr_row = fr_row + 1
+    Next Qual
+    
+     'Update the first 4 columns of the Member row on Qualifications Worksheet
+    to_sht.Cells(MemberRow, 1).Value = fr_sht.Range("C7").Value   'Household ID
+    to_sht.Cells(MemberRow, 2).Value = fr_sht.Range("H8").Value   'Affiliation
+    to_sht.Cells(MemberRow, 3).Value = fr_sht.Range("H7").Value   'CVCM ID
+    to_sht.Cells(MemberRow, 4).Value = fr_sht.Range("C8").Value   'Legal Name
+    
+End Sub
+
+Private Sub UpdateAffiliations(HouseholdID As String, Optional toWkBk As Workbook = Nothing)
+'This sub updates the "8 Affl" Worksheet
+'Source of the information being updated is the DATABASE worksheet
+'Worksheet Key: Household ID of member
+   
+    Dim fr_sht As Object, to_sht As Object
+    Dim SearchValue As String
+    Dim MemberRow As Integer
+    
+    Const toShtName As String = "8 Affl"
+    Const frShtName As String = "DATABASE"
+    ' Const SearchCellAddr As String = "C7"    ' Cell address of Household ID
+    
+    Debug.Print "===In UpdateAffiliations==="
+    
+    Set fr_sht = ThisWorkbook.Worksheets(frShtName)
+    'Check if target worksheet is in a different workbook
+    If toWkBk Is Nothing Then
+        Set to_sht = ThisWorkbook.Worksheets(toShtName)
+    Else
+       Set to_sht = toWkBk.Worksheets(toShtName)
+       Debug.Print "Target worksheet for UpdateAffiliations is on a different workbook."
+    End If
+    
+    ' Get the key value from the Cell containing the member's Household ID
+    SearchValue = HouseholdID          ' fr_sht.Range(SearchCellAddr).Value
+    Debug.Print "Search Key Value: " & SearchValue
+    
+    ' Search the target worksheet for the row in which key value is found
+    MemberRow = GetRow(toShtName, SearchValue, toWkBk)
+    Debug.Print "GetRow returns row: " & MemberRow
+ 
+    ' ===========================================
+    'Update the Affiliations Worksheet
+    
+    'Update General Affiliation Information: 6 fields C130:C135 copied to 5:10
+    Const NumGenFields As Integer = 6
+    Dim to_col As Integer, fr_row As Integer
+    
+    to_col = 5    'This is the start value for the col
+    fr_row = 130       'This is the start value for the row
+    Debug.Print "========= General Affiliations ========="
+    For Field = 1 To NumGenFields
+        Debug.Print "MemberRow: " & MemberRow & " col: " & to_col & " maps from: C" & fr_row
+        to_sht.Cells(MemberRow, to_col).Value = fr_sht.Range("C" & fr_row).Value
+        fr_row = fr_row + 1
+        to_col = to_col + 1
+    Next Field
+    
+    'Update the Specific Affiliations: Maximum of 13 with each affiliation having 3 fields - e.g. first set A138:C138 copied to 11:13
+    Const MaxNumAffl As Integer = 13
+    to_col = 11    'Start value of col for the specific affiliations
+    fr_row = 138     'Start value of row for the specific affiliations
+    For Affl = 1 To MaxNumAffl
+       Debug.Print "====== Specific Affiliation " & Affl & "======"
+       Debug.Print "MemberRow: " & MemberRow & " col: " & to_col & " maps from: A" & fr_row
+       to_sht.Cells(MemberRow, to_col).Value = fr_sht.Range("A" & fr_row).Value
+       to_col = to_col + 1
+       Debug.Print "MemberRow: " & MemberRow & " col: " & to_col & " maps from: B" & fr_row
+       to_sht.Cells(MemberRow, to_col).Value = fr_sht.Range("B" & fr_row).Value
+       to_col = to_col + 1
+       Debug.Print "MemberRow: " & MemberRow & " col: " & to_col & " maps from:C" & fr_row
+       to_sht.Cells(MemberRow, to_col).Value = fr_sht.Range("C" & fr_row).Value
+       to_col = to_col + 1
+       fr_row = fr_row + 1
+    Next Affl
+    
+
+     'Update the first 4 columns of the Member row on Affiliations Worksheet
+    to_sht.Cells(MemberRow, 1).Value = fr_sht.Range("C7").Value   'Household ID
+    to_sht.Cells(MemberRow, 2).Value = fr_sht.Range("H8").Value   'Affiliation
+    to_sht.Cells(MemberRow, 3).Value = fr_sht.Range("H7").Value   'CVCM ID
+    to_sht.Cells(MemberRow, 4).Value = fr_sht.Range("C8").Value   'Legal Name
+    
+End Sub
+
+Private Sub UpdateAssignments(HouseholdID As String, Optional toWkBk As Workbook = Nothing)
+'This sub updates the "9 Assgm" Worksheet
+'Source of the information being updated is the DATABASE worksheet
+'Worksheet Key: Household ID of member
+   
+    Dim fr_sht As Object, to_sht As Object
+    Dim SearchValue As String
+    Dim MemberRow As Integer
+    
+    Const toShtName As String = "9 Assgm"
+    Const frShtName As String = "DATABASE"
+    ' Const SearchCellAddr As String = "C7"    ' Cell address of Household ID
+    
+    Debug.Print "===In UpdateAssignments==="
+    
+    Set fr_sht = ThisWorkbook.Worksheets(frShtName)
+    ' Check if the target worksheet is on a different workbook
+    If toWkBk Is Nothing Then
+        Set to_sht = ThisWorkbook.Worksheets(toShtName)
+    Else
+       Set to_sht = toWkBk.Worksheets(toShtName)
+       Debug.Print "Target worksheet for UpdateAssignments is on a different workbook."
+    End If
+    
+    ' Get the key value from the Cell containing the member's Household ID
+    SearchValue = HouseholdID       ' fr_sht.Range(SearchCellAddr).Value
+    Debug.Print "Search Key Value: " & SearchValue
+    
+    ' Search the target worksheet for the row in which key value is found
+    MemberRow = GetRow(toShtName, SearchValue, toWkBk)
+    Debug.Print "GetRow returns row: " & MemberRow
+ 
+    ' ===========================================
+    ' Update the Assignments Worksheet
+    ' There are 19 assignments, each with 5 fields e.g. A155-C155, H155, J155 contain the first assigment info
+    Const MaxNumAssignments As Integer = 19
+    Dim Assignm As Integer, Field As Integer
+    Dim fr_row As Integer, to_col As Integer
+    
+    fr_row = 155
+    to_col = 5
+    For Assignm = 1 To MaxNumAssignments
+        Debug.Print "========= Assignment " & Assignm & " ========="
+        Debug.Print "MemberRow: " & MemberRow & " col: " & to_col & " maps from: A" & fr_row
+        to_sht.Cells(MemberRow, to_col).Value = fr_sht.Range("A" & fr_row).Value
+        to_col = to_col + 1
+        Debug.Print "MemberRow: " & MemberRow & " col: " & to_col & " maps from: B" & fr_row
+        to_sht.Cells(MemberRow, to_col).Value = fr_sht.Range("B" & fr_row).Value
+        to_col = to_col + 1
+        Debug.Print "MemberRow: " & MemberRow & " col: " & to_col & " maps from: C" & fr_row
+        to_sht.Cells(MemberRow, to_col).Value = fr_sht.Range("C" & fr_row).Value
+        to_col = to_col + 1
+        Debug.Print "MemberRow: " & MemberRow & " col: " & to_col & " maps from: H" & fr_row
+        to_sht.Cells(MemberRow, to_col).Value = fr_sht.Range("H" & fr_row).Value
+        to_col = to_col + 1
+        Debug.Print "MemberRow: " & MemberRow & " col: " & to_col & " maps from: J" & fr_row
+        to_sht.Cells(MemberRow, to_col).Value = fr_sht.Range("j" & fr_row).Value
+        to_col = to_col + 1
+        fr_row = fr_row + 1
+    Next Assignm
+
+     'Update the first 4 columns of the Member row on Affiliations Worksheet
+    to_sht.Cells(MemberRow, 1).Value = fr_sht.Range("C7").Value   'Household ID
+    to_sht.Cells(MemberRow, 2).Value = fr_sht.Range("H8").Value   'Affiliation
+    to_sht.Cells(MemberRow, 3).Value = fr_sht.Range("H7").Value   'CVCM ID
+    to_sht.Cells(MemberRow, 4).Value = fr_sht.Range("C8").Value   'Legal Name
+    
+End Sub
+
+Private Sub ListFormulas()
+' Lists the formulas and their associated values on the DATABASE worksheet
+' The formulas are written on a newly added worksheet
+' The 3 columns on the worksheet are: Address, Formula, Value
+
+    Dim Rng As Range
+    Dim WorkRng As Range
+    Dim xSheet As Worksheet
+    Dim xRow As Integer
+    
+    Set WorkRng = Worksheets("DATABASE").UsedRange
+    Set WorkRng = WorkRng.SpecialCells(xlFormulas, 23)
+    If WorkRng Is Nothing Then Exit Sub
+    
+    Application.ScreenUpdating = False
+    Set xSheet = Application.ActiveWorkbook.Worksheets.Add
+    xSheet.Range("A1:C1") = Array("Address", "Formula", "Value")
+    xSheet.Range("A1:C1").Font.Bold = True
+    xRow = 2
+    For Each Rng In WorkRng
+        xSheet.Cells(xRow, 1) = Rng.Address(RowAbsolute:=False, ColumnAbsolute:=False)
+        xSheet.Cells(xRow, 2) = " " & Rng.Formula
+        xSheet.Cells(xRow, 3) = Rng.Value
+        xRow = xRow + 1
+    Next
+    
+    xSheet.Columns("A:C").AutoFit
+    Application.ScreenUpdating = True
+    
+End Sub
+
+Public Sub MetaRemoveFormulae()
+'Removes the formulas on the DATABASE worksheet
+
+
+   Result = MsgBox("Do you want to continue with removing formulae?", vbOKCancel + vbQuestion)
+   If Result = vbOK Then
+       RemoveFormulae
+   Else
+      'Do nothing - cancel the removal
+   End If
+
+End Sub
+
+
+
+Private Sub RemoveFormulae()
+'Removes the formulas on the DATABASE worksheet
+'But leaves the values of the affected cells intact
+'This is to make it easier to update an existing member record
+
+    Dim Rng As Range
+    Dim WorkRng As Range
+    Dim xSheet As Worksheet
+    Dim xRow As Integer
+    Dim dSheet As Worksheet
+    
+    Set dSheet = ThisWorkbook.Worksheets("DATABASE")
+    Set WorkRng = dSheet.UsedRange
+    Set WorkRng = WorkRng.SpecialCells(xlFormulas, 23)
+    If WorkRng Is Nothing Then Exit Sub
+    
+    For Each Rng In WorkRng
+        Rng.Value = Rng.Value
+    Next
+
+End Sub
+
+Private Function GetLastRow(ByVal tgtWkShtName As String, _
+                                           Optional ByRef tgtWkBk As Workbook = Nothing) As Integer
+'Returns the Integer index of the last row on the target Worksheet
+'Parameters: name of the worksheet to be searched, and name of workbook if worksheet is
+'                   on a different file than the current Active workbook containing the macros
+'Assume: look only in the values of the first column on the worksheet
+'Assume that the worksheet content starts from the 5th row
+
+    Dim WkSht As Object
+    Dim SearchRange As Object
+    Dim LastRow As Integer
+    Dim FindRange As Object
+    
+    Debug.Print "===In GetLastRow==="
+    
+    ' Set the worksheet given the name
+    If tgtWkBk Is Nothing Then
+        Set WkSht = ThisWorkbook.Worksheets(tgtWkShtName)
+    Else
+       'Worksheet is on a different workbook
+        Set WkSht = tgtWkBk.Worksheets(tgtWkShtName)
+        Debug.Print "Worksheet is in a different workbook."
+    End If
+    
+    'Find the last row in the target worksheet.  We assume that every target worksheet starts content from 5th row
+'    Set SearchRange = WkSht.Range("A5", WkSht.Range("A5").End(xlDown))
+'    Debug.Print "Row count of SearchRange: " & SearchRange.Rows.Count
+'    LastRow = 4 + SearchRange.Rows.Count
+'    Debug.Print "Last row in the target worksheet:" & LastRow
+
+    'Find the last row of data by looking upwards from Excel's last row
+    LastRow = WkSht.Range("A" & Rows.Count).End(xlUp).Row
+    'Find the last row of data by looking downwards from top  cell in A column
+    'LastRow = WkSht.Range("A1").End(xlDown).Row
+    Debug.Print "Last row in the target worksheet " & tgtWkShtName & ": " & LastRow
+
+    GetLastRow = LastRow
+    
+End Function
+
+Private Sub UpdateImptDocs(HouseholdID As String, Optional toWkBk As Workbook = Nothing)
+'This sub updates the "10 Impt Docs" Worksheet
+'Source of the information being updated is the DATABASE worksheet
+'Worksheet Key: Household ID of member
+   
+    Dim fr_sht As Object, to_sht As Object
+    Dim SearchValue As String
+    Dim MemberRow As Integer
+    
+    Const toShtName As String = "10 Impt Docs"
+    Const frShtName As String = "DATABASE"
+    ' Const SearchCellAddr As String = "C7"    ' Cell address of Household ID
+    
+    Debug.Print "===In UpdateImptDocs==="
+    
+    Set fr_sht = ThisWorkbook.Worksheets(frShtName)
+    ' Check if target worksheet is on a different workbook
+    If toWkBk Is Nothing Then
+        Set to_sht = ThisWorkbook.Worksheets(toShtName)
+    Else
+       Set to_sht = toWkBk.Worksheets(toShtName)
+    End If
+    
+    ' Get the key value from the Cell containing the member's Household ID
+    SearchValue = HouseholdID          ' fr_sht.Range(SearchCellAddr).Value
+    Debug.Print "Search Key Value: " & SearchValue
+    
+    ' Search the target worksheet for the row in which key value is found
+    MemberRow = GetRow(toShtName, SearchValue, toWkBk)
+    Debug.Print "GetRow returns row: " & MemberRow
+ 
+    ' ===========================================
+    ' Update the Important Docs Worksheet
+    ' There are 9 documents, each with 1 field
+    Const MaxNumDocs As Integer = 8
+    Dim Doc As Integer
+    Dim fr_row As Integer, to_col As Integer
+    
+    fr_row = 179
+    to_col = 5
+    For Doc = 1 To MaxNumDocs
+        Debug.Print "MemberRow: " & MemberRow & " col: " & to_col & " maps from: A" & fr_row
+        to_sht.Cells(MemberRow, to_col).Value = fr_sht.Range("A" & fr_row).Value
+        to_col = to_col + 1
+        fr_row = fr_row + 1
+    Next Doc
+    
+    ' Update the remarks field for the last document
+    fr_row = fr_row - 1
+     Debug.Print "MemberRow: " & MemberRow & " col: " & to_col & " maps from: C" & fr_row
+    to_sht.Cells(MemberRow, to_col).Value = fr_sht.Range("C" & fr_row).Value
+    
+     'Update the first 4 columns of the Member row on Important Docs Worksheet
+    to_sht.Cells(MemberRow, 1).Value = fr_sht.Range("C7").Value   'Household ID
+    to_sht.Cells(MemberRow, 2).Value = fr_sht.Range("H8").Value   'Affiliation
+    to_sht.Cells(MemberRow, 3).Value = fr_sht.Range("H7").Value   'CVCM ID
+    to_sht.Cells(MemberRow, 4).Value = fr_sht.Range("C8").Value   'Legal Name
+        
+End Sub
+
+Private Sub UpdateRecord()
+' This procedure calls each of the update procedures for the individual
+' worksheets.  It assumes the member currently exists in the database.
+' As a result, it does not check for duplicate name or duplicate Household ID.
+
+    Dim MemberName As String
+    MemberName = Trim(ThisWorkbook.Worksheets("DATABASE").Range("C3").Value)
+    Debug.Print "Member Name: #" & MemberName & "#"
+       
+    'Using the name of the member from the drop down menu on DATABASE,
+    ' find the Household ID of the member from the "1 Personnel" Worksheet.
+    ' This is because the Household ID on DATABASE worksheet may be updated.
+    
+    Dim MemberRow As Integer
+    MemberRow = GetRow("1 Personnel", MemberName)
+    Debug.Print "Member Name is found on Row: " & MemberRow & " of the Personnel Worksheet."
+        
+    'Household ID is found in Column 3
+    Dim HouseholdID As String
+    HouseholdID = Trim(ThisWorkbook.Worksheets("1 Personnel").Cells(MemberRow, 3).Value)
+    Debug.Print "Household ID: #" & HouseholdID & "#"
+        
+    'Spouse Household ID is found in Column 12
+    Dim SpouseHouseHoldID As String
+    SpouseHouseHoldID = Trim(ThisWorkbook.Worksheets("1 Personnel").Cells(MemberRow, 12).Value)
+    Debug.Print "SpouseHousehold ID: #" & SpouseHouseHoldID & "#"
+    
+    ' Update the Personnel Worksheet - key value (in first column) is Legal Name
+     Call UpdatePersonnel(MemberName)
+    ' Update the Children Worksheet - henceforth, key value is Household ID
+     Call UpdateChildren(HouseholdID, SpouseHouseHoldID)
+    ' Update the Emergency Info Worksheet -
+      Call UpdateEmergInfo(HouseholdID, SpouseHouseHoldID)
+    ' Update the Insurance Info Worksheet
+    Call UpdateInsurance(HouseholdID)
+    ' Update the Emergency Contact Worksheet
+    Call UpdateEmergContact(HouseholdID)
+    ' Update the Church Info Worksheet
+    Call UpdateChurchInfo(HouseholdID)
+    ' Update Qualifications
+    Call UpdateQualifications(HouseholdID)
+    ' Update Affiliations
+    Call UpdateAffiliations(HouseholdID)
+    ' Update Assignments
+    Call UpdateAssignments(HouseholdID)
+    ' Update Important Documents
+    Call UpdateImptDocs(HouseholdID)
+    
+
+End Sub
+
+
+Public Sub MetaUpdateRecord()
+' This is a procedure to confirm and call the UpdateMember Procedure
+
+    Result = MsgBox("Do you want to continue with UPDATING the record?", vbOKCancel + vbQuestion)
+       If Result = vbOK Then
+           ' Check that the Legal Name slot (C8) and Household No slot (C7) are not empty.
+           Dim Name As String, HID As String
+            Name = Trim(ThisWorkbook.Worksheets("DATABASE").Range("C8").Value)
+            HID = Trim(ThisWorkbook.Worksheets("DATABASE").Range("C7").Value)
+        
+            If (Len(Name) < 1) Or (Len(HID) < 1) Then
+               MsgBox ("LEGAL NAME and/or HOUSEHOLD NO. slots are empty.  Update will be aborted.")
+               Exit Sub
+           End If
+           ' Both name and household slots are filled. Proceed to update the member's record.
+           Call UpdateRecord
+           MsgBox ("UPDATE RECORD has completed.")
+       End If
+       
+End Sub
+
+Public Sub MetaAddRecord()
+' This is a procedure to confirm and call the AddMember Procedure.
+' The procedure checks whether the Member Name and Household ID are new in the database.
+' The procedure proceeds only when neither item is already existent in the database.
+' Otherwise, the procedure is aborted.
+
+
+    Dim WkSht As Object, PersWkSht As Object
+    Dim MemberName As String, HouseholdID As String
+    Dim FoundName As Boolean, FoundHID As Boolean
+    
+    Set WkSht = ThisWorkbook.Worksheets("DATABASE")
+    ' Extract the member's name from the DATABASE worksheet
+    MemberName = Trim(WkSht.Range("C8").Value)
+    Debug.Print "Member Name: #" & MemberName & "#"
+    ' Extract the HouseholdID
+    HouseholdID = Trim(WkSht.Range("C7").Value)
+    Debug.Print "HouseholdID: #" & HouseholdID & "#"
+    
+    Set PersWkSht = ThisWorkbook.Worksheets("1 Personnel")
+    
+    LastRow = GetLastRow("1 Personnel")
+    MemberRow = GetRow("1 Personnel", MemberName)
+    If MemberRow <= LastRow Then
+        FoundName = True
+    Else
+        FoundName = False
+    End If
+    
+    HidRow = GetRow("2 Children", HouseholdID)
+    If HidRow <= LastRow Then
+        FoundHID = True
+    Else
+        FoundHID = False
+    End If
+    
+    If FoundName Then
+       MsgBox ("The LEGAL NAME exists in the database.  Addition will be aborted.")
+    End If
+    
+     If FoundHID Then
+       MsgBox ("The HOUSEHOLD NO. exists in the database.  Addition will be aborted.")
+    End If
+    
+    If FoundName Or FoundHID Then
+       Exit Sub
+     End If
+     
+    If (Len(MemberName) < 1) Or (Len(HouseholdID) < 1) Then
+        MsgBox ("LEGAL NAME and/or HOUSEHOLD NO. slots are empty.  Addition will be aborted.")
+        Exit Sub
+    End If
+    
+    Result = MsgBox("Do you want to continue with ADDING a NEW RECORD?", vbOKCancel + vbQuestion)
+       If Result = vbOK Then
+           Call AddRecord(MemberName, HouseholdID)
+            MsgBox ("ADD NEW RECORD has completed.")
+       Else
+          'Do nothing - cancel the refresh
+       End If
+       
+   
+    
+End Sub
+
+Private Sub AddRecord(MemberName As String, HouseholdID As String)
+' This procedure updates the worksheets with a new member's information.
+' The Spouse's Household ID is set to empty string so that Children and Emergency Contact Data
+' of the spouse will not be attempted.
+
+    Dim SpouseHouseHoldID As String
+    SpouseHouseHoldID = ""
+
+    ' Update the Personnel Worksheet - key value (in first column) is Legal Name
+     Call UpdatePersonnel(MemberName)
+    ' Update the Children Worksheet - henceforth, key value is Household ID
+     Call UpdateChildren(HouseholdID, SpouseHouseHoldID)
+    ' Update the Emergency Info Worksheet -
+    Call UpdateEmergInfo(HouseholdID, SpouseHouseHoldID)
+    ' Update the Insurance Info Worksheet
+    Call UpdateInsurance(HouseholdID)
+    ' Update the Emergency Contact Worksheet
+    Call UpdateEmergContact(HouseholdID)
+    ' Update the Church Info Worksheet
+    Call UpdateChurchInfo(HouseholdID)
+    ' Update Qualifications
+    Call UpdateQualifications(HouseholdID)
+    ' Update Affiliations
+    Call UpdateAffiliations(HouseholdID)
+    ' Update Assignments
+    Call UpdateAssignments(HouseholdID)
+    ' Update Important Documents
+    Call UpdateImptDocs(HouseholdID)
+    
+
+End Sub
+
+
+Public Sub MetaDeleteRecord()
+' This is a procedure to confirm and call the DeleteMember Procedure.
+' The procedure checks whether the Member Name and Household ID are existent in the database.
+' The deletion proceeds only when the identified record is confirmed to be existing in the database.
+' Otherwise, the procedure is aborted.
+' The deletion procedure is preceded by a transfer of the record to another workbook.
+' The filepath to the target workbook is requested from the user in a MsgBox.
+
+
+    Dim WkSht As Object, PersWkSht As Object
+    Dim MemberName As String, HouseholdID As String
+    Dim FoundName As Boolean, FoundHID As Boolean
+    Dim ContinueDelete As Boolean
+    Dim toWkBk As Workbook
+    Dim FilePath As String
+    
+    ' Initialize ContinueDelete to False
+    ContinueDelete = False
+    
+    Set WkSht = ThisWorkbook.Worksheets("DATABASE")
+    ' Extract the member's name from the DATABASE worksheet
+    MemberName = WkSht.Range("C8").Value
+    Debug.Print "Member Name: #" & MemberName & "#"
+    ' Extract the HouseholdID
+    HouseholdID = WkSht.Range("C7").Value
+    Debug.Print "HouseholdID: #" & HouseholdID & "#"
+    
+    Set PersWkSht = ThisWorkbook.Worksheets("1 Personnel")
+    
+    'Find the last used row from the 1 Personnel worksheet (source workbook)
+    LastRow = GetLastRow("1 Personnel")
+    MemberRow = GetRow("1 Personnel", MemberName)
+    If MemberRow <= LastRow Then
+        FoundName = True
+    Else
+        FoundName = False
+    End If
+    
+    HidRow = GetRow("2 Children", HouseholdID)
+    If HidRow <= LastRow Then
+        FoundHID = True
+    Else
+        FoundHID = False
+    End If
+        
+    If FoundName And FoundHID Then
+         FilePath = Trim(InputBox("If you want to transfer the record, input the full path to the TARGET file. Otherwise, click Cancel.", _
+                                 "Transfer Record", "Target File Path"))
+         If Len(FilePath) > 0 Then
+                 ' Check whether file exists
+                 Debug.Print "File Path: " & FilePath
+                 If Dir(FilePath, vbDirectory) = vbNullString Then
+                       MsgBox "The file or directory does not exist.  The transfer/deletion will be aborted."
+                Else
+                       On Error Resume Next
+                       Set toWkBk = Workbooks.Open(FilePath)
+                       On Error GoTo 0
+                       If toWkBk Is Nothing Then MsgBox FilePath & " is invalid", vbCritical
+                       Call TransferRecord(MemberName, HouseholdID, toWkBk)
+                       MsgBox ("TRANSFER RECORD has completed.")
+                       ContinueDelete = True
+                End If   'If file exists
+          Else
+               ContinueDelete = True
+         End If   'If Len(FilePath) > 0
+    Else   'Name or HID not found; so exit the procedure
+          MsgBox ("LEGAL NAME or HOUSEHOLD NO. is not existing. Transfer/deletion is aborted.")
+          Exit Sub
+    End If  'If both legal name and Household ID are found
+       
+   If ContinueDelete Then
+      Result = MsgBox("Do you want to continue with DELETE record?", vbOKCancel + vbQuestion)
+      If Result = vbOK Then
+           Call DeleteRecord(MemberName, HouseholdID)
+           MsgBox ("DELETE has been completed.")
+      Else
+           MsgBox ("DELETE has been cancelled.")
+      End If   'If Result = vbOK
+    End If
+
+End Sub
+
+Private Sub TransferRecord(MemberName As String, HouseholdID As String, transWkBk As Workbook)
+' This procedure copies member's information from the worksheets to another workbook.
+    
+
+    Const UpdateForSpouse As Boolean = False
+    Const SpouseHouseHoldID As String = ""
+    
+
+     ' By Transfer, we mean copy from source sheet and paste to target worksheet that is in a different workbook
+     ' Copy the Personnel Worksheet info for the member to the Target worksheet - key value (in first column) is Legal Name
+     Call UpdatePersonnel(MemberName, transWkBk)
+    ' Transfer the Children Worksheet info - henceforth, key value is Household ID
+     Call UpdateChildren(HouseholdID, SpouseHouseHoldID, UpdateForSpouse, transWkBk)
+    ' Transfer the Emergency Info Worksheet info
+    Call UpdateEmergInfo(HouseholdID, SpouseHouseHoldID, UpdateForSpouse, transWkBk)
+    ' Transfer the Insurance Info Worksheet info
+    Call UpdateInsurance(HouseholdID, transWkBk)
+    ' Transfer the Emergency Contact Worksheet
+    Call UpdateEmergContact(HouseholdID, transWkBk)
+    ' Transfer the Church Info Worksheet
+    Call UpdateChurchInfo(HouseholdID, transWkBk)
+    ' Transfer Qualifications
+    Call UpdateQualifications(HouseholdID, transWkBk)
+    ' Transfer Affiliations
+    Call UpdateAffiliations(HouseholdID, transWkBk)
+    ' Transfer Assignments
+    Call UpdateAssignments(HouseholdID, transWkBk)
+    ' Transfer Important Documents
+    Call UpdateImptDocs(HouseholdID, transWkBk)
+
+    
+End Sub
+
+Private Sub DeleteRecord(MemberName As String, HouseholdID As String)
+' This procedure deletes member's information from the current worksheets
+
+    Dim WkShtNames(1 To 10) As String
+    Dim WkShtLastCols(1 To 10) As String
+    Dim Index As Integer
+    Dim toWkSht As Object, frWkSht As Object
+    Dim SearchKey As String
+    Dim DelRow As Integer
+
+    ' Initialize the names of the worksheets
+    WkShtNames(1) = "1 Personnel"
+    WkShtNames(2) = "2 Children"
+    WkShtNames(3) = "3 Emerg Info"
+    WkShtNames(4) = "4 Insurance"
+    WkShtNames(5) = "5 Emerg Contact"
+    WkShtNames(6) = "6 Ch Info"
+    WkShtNames(7) = "7 Qual"
+    WkShtNames(8) = "8 Affl"
+    WkShtNames(9) = "9 Assgm"
+    WkShtNames(10) = "10 Impt Docs"
+    
+    'Initialize the copy/paste ranges for each worksheet
+'    WkShtLastCols(1) = "R"
+'    WkShtLastCols(2) = "AH"
+'    WkShtLastCols(3) = "U"
+'    WkShtLastCols(4) = "V"
+'    WkShtLastCols(5) = "W"
+'    WkShtLastCols(6) = "AB"
+'    WkShtLastCols(7) = "K"
+'    WkShtLastCols(8) = "AT"
+'    WkShtLastCols(9) = "DT"
+'    WkShtLastCols(10) = "M"
+
+   Debug.Print "===In DeleteRecord==="
+
+    For Index = 1 To 10
+        Debug.Print "Deleting from Worksheet: " & WkShtNames(Index)
+        Set frWkSht = ThisWorkbook.Worksheets(WkShtNames(Index))
+        If Index = 1 Then
+           SearchKey = MemberName
+        Else
+           SearchKey = HouseholdID
+        End If
+        Debug.Print "SearchKey is: " & SearchKey
+        DelRow = GetRow(WkShtNames(Index), SearchKey)
+        Debug.Print "Delete row is: " & DelRow
+        LastRow = GetLastRow(WkShtNames(Index))
+        Debug.Print "Last row is: " & LastRow
+        If DelRow > LastRow Then
+            MsgBox ("Could not delete the record in " & WkShtNames(Index) & " worksheet.")
+        Else
+            frWkSht.Rows(DelRow).Delete Shift:=xlShiftUp
+            Debug.Print "Row #" & DelRow; " has been deleted from worksheet: " & WkShtNames(Index)
+        End If
+
+    Next Index
+
+
+End Sub
+
